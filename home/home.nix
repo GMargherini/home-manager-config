@@ -82,11 +82,11 @@
     # EDITOR = "emacs";
   };
   imports = [
-    ./home/anyrun/default.nix
-    ./home/waybar/default.nix
-    ./home/swaync/default.nix
-    ./home/config/yt-dlp.nix
-    ./home/neovim/default.nix
+    ./anyrun/default.nix
+    ./waybar/default.nix
+    ./swaync/default.nix
+    ./config/yt-dlp.nix
+    ./neovim/default.nix
   ];
   programs.yazi.enable = true;
   programs.zellij.enable = true;
