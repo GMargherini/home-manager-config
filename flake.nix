@@ -15,7 +15,7 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, anyrun, ... }:
+    { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -30,39 +30,6 @@
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
-      };
-      anyrun = {
-        enable = true;
-        config = {
-          x = { fraction = 0.5; };
-          y = { fraction = 0.3; };
-          width = { fraction = 0.3; };
-          hideIcons = false;
-          ignoreExclusiveZones = false;
-          layer = "overlay";
-          hidePluginInfo = false;
-          closeOnClick = false;
-          showResultsImmediately = false;
-          maxEntries = null;
-
-          plugins = [
-            # An array of all the plugins you want, which either can be paths to the .so files, or their packages
-            "libapplications.so"
-            "libsymbols.so"
-            "libshell.so"
-            "libkidex.so"
-            "libwebsearch.so"
-          ];
-        };
-        extraConfigFiles."websearch.ron".text = ''
-          Config(
-            // for any other plugin
-            // this file will be put in ~/.config/anyrun/some-plugin.ron
-            // refer to docs of xdg.configFile for available options
-            prefix: ":?",
-            engines: [Ecosia]
-          )
-        '';
       };
     };
 }

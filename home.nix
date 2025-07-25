@@ -74,6 +74,10 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
+  imports = [
+    ./home/anyrun/default.nix
+    ./home/waybar/default.nix
+  ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
