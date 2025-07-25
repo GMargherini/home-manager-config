@@ -20,7 +20,7 @@
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    pkgs.hello
+    # pkgs.hello
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -39,6 +39,12 @@
     pkgs.waybar
     pkgs.anyrun
     pkgs.swaynotificationcenter
+    pkgs.newsboat
+    pkgs.pika-backup
+    pkgs.vlc
+    pkgs.yazi
+    pkgs.zellij
+    pkgs.vscodium
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -78,7 +84,12 @@
   imports = [
     ./home/anyrun/default.nix
     ./home/waybar/default.nix
+    ./home/swaync/default.nix
+    ./home/config/yt-dlp.nix
+    ./home/neovim/default.nix
   ];
+  programs.yazi.enable = true;
+  programs.zellij.enable = true;
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
