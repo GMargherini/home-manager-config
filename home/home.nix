@@ -95,7 +95,6 @@
   ];
   programs.yazi.enable = true;
   programs.zellij.enable = true;
-  programs.ghostty.enable = true;
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
