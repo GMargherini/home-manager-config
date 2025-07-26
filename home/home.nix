@@ -45,6 +45,8 @@
     pkgs.yazi
     pkgs.zellij
     pkgs.vscodium
+    pkgs.hyprlock
+    pkgs.hyprpaper
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -87,9 +89,13 @@
     ./swaync/default.nix
     ./config/yt-dlp.nix
     ./neovim/default.nix
+    ./hypr/hyprland.nix
+    ./hypr/hyprpaper.nix
+    ./hypr/hyprlock.nix
   ];
   programs.yazi.enable = true;
   programs.zellij.enable = true;
+  programs.ghostty.enable = true;
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
