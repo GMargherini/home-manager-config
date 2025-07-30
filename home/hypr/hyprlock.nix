@@ -19,14 +19,11 @@
         };
 
         background = {
-          monitor = {
             path = "~/Pictures/Wallpapers/1080/pixel city.png";
             blur_passes = 0;
-          };
         };
 
         input-field = {
-          monitor = {
             size = "20%, 5%";
             outline_thickness = 3;
             inner_color = "rgba(0, 0, 0, 0.5)"; # no fill
@@ -54,8 +51,37 @@
             position = "0, -20";
             halign = "center";
             valign = "center";
-          };
         };
+
+        label = [
+          {
+              text = "$TIME"; # ref. https://wiki.hyprland.org/Hypr-Ecosystem/hyprlock/#variable-substitution
+              font_size = 90;
+              font_family = "$font";
+
+              position = "-30, 0";
+              halign = "center";
+              valign = "top";
+          }
+          {
+              text = "cmd[update:60000] date +'%A, %d %B %Y'"; # update every 60 seconds
+              font_size = 25;
+              font_family = "$font";
+
+              position = "-30, -150";
+              halign = "center";
+              valign = "top";
+          }
+          {
+              text = "$LAYOUT[en,it]";
+              font_size = 24;
+              onclick = "hyprctl switchxkblayout all next";
+
+              position = "-20, 0";
+              halign = "right";
+              valign = "top";
+          }
+        ];
       };
   };
 }

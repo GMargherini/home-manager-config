@@ -9,7 +9,7 @@
 
         "$mainMod" = "SUPER";
         "$menu" = "anyrun";
-        "$terminal" = "kitty";
+        "$terminal" = "ghostty";
 
         exec-once = [
           "systemctl --user start hyprpolkitagent"
@@ -155,7 +155,7 @@
 
         bind = 
           [
-            "$mainMod, Return, exec, $terminal"
+            "$mainMod, Return, exec, nixGL $terminal"
             "$mainMod SHIFT, Q, killactive"
             "$mainMod SHIFT, E, exit"
             "$mainMod, F, fullscreenstate, 2 0"
@@ -163,19 +163,18 @@
             "$mainMod, D, exec, $menu"
             "$mainMod, P, pseudo, # dwindle"
             "$mainMod, J, togglesplit, # dwindle"
-            "$mainMod, L, exec, hyprlock"
             "$mainMod SHIFT, R, exec, hyprctl reload"
             "$mainMod SHIFT, Escape, exec, poweroff"
 
-            "$mainMod, left, movefocus, l"
-            "$mainMod, right, movefocus, r"
-            "$mainMod, up, movefocus, u"
-            "$mainMod, down, movefocus, d"
+            "$mainMod, H, movefocus, l"
+            "$mainMod, l, movefocus, r"
+            "$mainMod, k, movefocus, u"
+            "$mainMod, j, movefocus, d"
 
-            "$mainMod SHIFT, left, movewindow, l"
-            "$mainMod SHIFT, right, movewindow, r"
-            "$mainMod SHIFT, up, movewindow, u"
-            "$mainMod SHIFT, down, movewindow, d"
+            "$mainMod SHIFT, h, movewindow, l"
+            "$mainMod SHIFT, l, movewindow, r"
+            "$mainMod SHIFT, k, movewindow, u"
+            "$mainMod SHIFT, j, movewindow, d"
 
             "$mainMod, 1, workspace, 1"
             "$mainMod, 2, workspace, 2" 

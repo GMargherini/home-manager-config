@@ -45,8 +45,14 @@
     pkgs.yazi
     pkgs.zellij
     pkgs.vscodium
-    pkgs.hyprlock
     pkgs.hyprpaper
+    pkgs.kitty
+    pkgs.ghostty
+    pkgs.stylua
+    pkgs.lua-language-server
+    pkgs.ripgrep
+    pkgs.libreoffice
+    pkgs.onlyoffice-desktopeditors
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -88,13 +94,15 @@
     ./waybar/default.nix
     ./swaync/default.nix
     ./config/yt-dlp.nix
-    ./neovim/default.nix
-    ./hypr/hyprland.nix
+    ./kitty/default.nix
+#    ./hypr/hyprland.nix
     ./hypr/hyprpaper.nix
-    ./hypr/hyprlock.nix
+#    ./hypr/hyprlock.nix
+    ./config/ghostty.nix
   ];
   programs.yazi.enable = true;
   programs.zellij.enable = true;
+  programs.ripgrep.enable = true;
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

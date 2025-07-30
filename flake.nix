@@ -12,16 +12,34 @@
       url = "github:anyrun-org/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprpaper.url = "github:hyprwm/hyprpaper";
-    hyprlock.url = "github:hyprwm/hyprlock";
+    nixgl = {
+      url = "github:nix-community/nixGL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprpaper = {
+      url = "github:hyprwm/hyprpaper";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    inputs @ { nixpkgs, home-manager, ... }:
+    inputs @ { nixpkgs, home-manager, nixgl, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      overlays = [ nixgl.overlay ];
     in
     {
       homeConfigurations."dolphin" = home-manager.lib.homeManagerConfiguration {
@@ -31,13 +49,13 @@
         # the path to your home.nix.
         modules = [ 
           ./home/home.nix
-          {
-            wayland.windowManager.hyprland = {
-              enable = true;
-              package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-              portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-            };
-          }
+        #  {
+        #    wayland.windowManager.hyprland = {
+        #      enable = true;
+        #      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+        #      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+        #    };
+        #  }
         ];
 
         # Optionally use extraSpecialArgs

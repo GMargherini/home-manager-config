@@ -3,7 +3,7 @@
         enable = true;
         config = {
           x = { fraction = 0.5; };
-          y = { fraction = 0.5; };
+          y = { fraction = 0.4; };
           width = { fraction = 0.3; };
           hideIcons = false;
           ignoreExclusiveZones = false;
