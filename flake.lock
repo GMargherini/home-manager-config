@@ -210,6 +210,27 @@
         "type": "github"
       }
     },
+    "home-manager_2": {
+      "inputs": {
+        "nixpkgs": [
+          "retroarch-nix",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1753848447,
+        "narHash": "sha256-fsld/crW9XRodFUG1GK8Lt0ERv6ARl9Wj3Xb0x96J4w=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "d732b648e5a7e3b89439ee25895e4eb24b7e5452",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
     "hyprcursor": {
       "inputs": {
         "hyprlang": [
@@ -797,6 +818,27 @@
         "type": "github"
       }
     },
+    "retroarch-nix": {
+      "inputs": {
+        "home-manager": "home-manager_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1743256458,
+        "narHash": "sha256-HKWStKIHNyMjp9XjN3/EePIk2/Dm35H4HxYZXLhKwrI=",
+        "owner": "StoppingBuck",
+        "repo": "retroarch-nix",
+        "rev": "8a9bf6e4b9e9214abc3129f881807591a7c9a22c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "StoppingBuck",
+        "repo": "retroarch-nix",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "anyrun": "anyrun",
@@ -806,7 +848,8 @@
         "hyprlock": "hyprlock",
         "hyprpaper": "hyprpaper",
         "nixgl": "nixgl",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "retroarch-nix": "retroarch-nix"
       }
     },
     "systems": {
