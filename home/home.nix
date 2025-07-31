@@ -119,7 +119,6 @@
 #    ./config/lutris.nix
 #    ./config/steam.nix
   ];
-  wayland.windowManager.hyprland.enable = true;
   programs = {
     yazi.enable = true;
     zellij.enable = true;
