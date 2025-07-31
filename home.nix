@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -17,8 +17,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  nixpkgs.config.allowUnfree = true;
-  home.packages = with pkgs; [
+  home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -35,41 +34,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    
-    cowsay
-    waybar
-    anyrun
-    swaynotificationcenter
-    newsboat
-    pika-backup
-    vlc
-    yazi
-    zellij
-    vscodium
-    inputs.hyprland
-    hyprpaper
-    kitty
-    #ghostty
-    stylua
-    lua-language-server
-    ripgrep
-    ripgrep-all
-    libreoffice
-    onlyoffice-desktopeditors
-    inkscape
-    obsidian
-    scrcpy
-    retroarch
-    remmina
-    tdf
-    mpv
-    wine
-    fira
-    adwaita-icon-theme
-    devtoolbox
   ];
-  
-  fonts.fontconfig.enable = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -105,24 +70,7 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
-  imports = [
-    ./anyrun/default.nix
-    ./waybar/default.nix
-    ./swaync/default.nix
-    ./config/yt-dlp.nix
-    ./kitty/default.nix
-#    ./hypr/hyprland.nix
-    ./hypr/hyprpaper.nix
-#    ./hypr/hyprlock.nix
-    ./config/ghostty.nix
-#    ./config/lutris.nix
-#    ./config/steam.nix
-  ];
-  programs = {
-    yazi.enable = true;
-    zellij.enable = true;
-    ripgrep.enable = true;
-    mpv.enable = true;
-    home-manager.enable = true;
-  };
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 }

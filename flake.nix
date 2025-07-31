@@ -41,9 +41,10 @@
   outputs =
     inputs @ { nixpkgs, home-manager, nixgl, ... }:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-      overlays = [ nixgl.overlay ];
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        overlays = [ nixgl.overlay ];
+      };
     in
     {
       homeConfigurations."dolphin" = home-manager.lib.homeManagerConfiguration {
@@ -64,6 +65,9 @@
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
+        extraSpecialArgs = {
+            inherit inputs;
+          };
       };
     };
 }
