@@ -46,10 +46,10 @@
     yazi
     zellij
     vscodium
-    inputs.hyprland
+    hyprland
     hyprpaper
     kitty
-    #ghostty
+    ghostty
     stylua
     lua-language-server
     ripgrep
@@ -67,6 +67,7 @@
     fira
     adwaita-icon-theme
     devtoolbox
+    nixgl.nixGLIntel
   ];
   
   fonts.fontconfig.enable = true;
@@ -111,13 +112,14 @@
     ./swaync/default.nix
     ./config/yt-dlp.nix
     ./kitty/default.nix
-#    ./hypr/hyprland.nix
+    ./hypr/hyprland.nix
     ./hypr/hyprpaper.nix
 #    ./hypr/hyprlock.nix
     ./config/ghostty.nix
 #    ./config/lutris.nix
 #    ./config/steam.nix
   ];
+  wayland.windowManager.hyprland.enable = true;
   programs = {
     yazi.enable = true;
     zellij.enable = true;

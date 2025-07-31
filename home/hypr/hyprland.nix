@@ -162,7 +162,6 @@
             "$mainMod, Space, togglefloating"
             "$mainMod, D, exec, $menu"
             "$mainMod, P, pseudo, # dwindle"
-            "$mainMod, J, togglesplit, # dwindle"
             "$mainMod SHIFT, R, exec, hyprctl reload"
             "$mainMod SHIFT, Escape, exec, poweroff"
 

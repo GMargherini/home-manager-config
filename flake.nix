@@ -8,32 +8,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    anyrun = {
-      url = "github:anyrun-org/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixgl = {
       url = "github:nix-community/nixGL";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprpaper = {
-      url = "github:hyprwm/hyprpaper";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprlock = {
-      url = "github:hyprwm/hyprlock";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    retroarch-nix = {
-      url = "github:StoppingBuck/retroarch-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -54,13 +30,6 @@
         # the path to your home.nix.
         modules = [ 
           ./home/home.nix
-        #  {
-        #    wayland.windowManager.hyprland = {
-        #      enable = true;
-        #      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-        #      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-        #    };
-        #  }
         ];
 
         # Optionally use extraSpecialArgs
