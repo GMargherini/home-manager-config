@@ -63,7 +63,7 @@
     remmina
     tdf
     mpv
-    wine
+    wineWowPackages.staging
     fira
     adwaita-icon-theme
     devtoolbox
