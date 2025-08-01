@@ -37,6 +37,9 @@
     # '')
     
     cowsay
+    nvtopPackages.amd
+    htop
+    fastfetch
     waybar
     anyrun
     swaynotificationcenter
