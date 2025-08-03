@@ -142,4 +142,30 @@
     mpv.enable = true;
     home-manager.enable = true;
   };
+  home.pointerCursor = {
+    gtk.enable = true;
+    # x11.enable = true;
+    package = pkgs.phinger-cursors;
+    name = "phingers-cursors-light";
+    size = 32;
+  };
+
+  gtk = {
+    enable = true;
+
+    theme = {
+      package = pkgs.gruvbox-dark-gtk;
+      name = "Gruvbox-Dark";
+    };
+
+    iconTheme = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
+    };
+
+    font = {
+      name = "Sans";
+      size = 11;
+    };
+  };
 }
