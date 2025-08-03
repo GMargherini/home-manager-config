@@ -82,7 +82,7 @@
         "cpu" = {
           "format" = "{icon} {usage}%";
           "tooltip" = true;
-          "format-icons" = [" " "▁"  "▂"  "▃"  "▄"  "▅"  "▆"  "▇"  "█"];
+          "format-icons" = ["_" "▁"  "▂"  "▃"  "▄"  "▅"  "▆"  "▇"  "█"];
         };
         "memory" = {
           "format" = " {}%";
@@ -120,12 +120,12 @@
         };
         "network" = {
           "format-wifi" = " {signalStrength}% (↓ {bandwidthDownBits}, ↑ {bandwidthUpBits})";
-          "format-ethernet" = " (↓ {bandwidthDownBits}, ↑ {bandwidthUpBits})";
+          "format-ethernet" = " (↓ {bandwidthDownBits}, ↑ {bandwidthUpBits})";
           "tooltip-format" = "{essid} = {ipaddr}";
           "format-linked" = " {ifname} (No IP)";
           "format-disconnected" = "Disconnected ⚠ {ifname}";
           "interval" = 10;
-          "on-click" = "kitty -- nmtui";
+          "on-click" = "ghostty -e nmtui";
         };
         "wireplumber" = {
           "format" = "{icon} {volume}%";
@@ -185,7 +185,7 @@
     };
     style = ''
       * {
-        font-family: "FiraCode Medium";
+        font-family: "FiraCode Nerd Font Mono", "Font Awesome 6 Free";
         font-size: 16px;
         min-height: 20px;
         background-color: transparent;

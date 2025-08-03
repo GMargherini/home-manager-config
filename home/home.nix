@@ -17,7 +17,6 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -70,7 +69,21 @@
     fira
     adwaita-icon-theme
     devtoolbox
-    nixgl.nixGLIntel
+    fish
+    neovim
+    vimPlugins.LazyVim
+    discord
+    fira-code
+    fira-code-symbols
+    font-awesome
+    liberation_ttf
+    mplus-outline-fonts.githubRelease
+    noto-fonts
+    noto-fonts-emoji
+    proggyfonts
+    lmms
+    starship
+    bat
   ];
   
   fonts.fontconfig.enable = true;
@@ -109,7 +122,7 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
-  imports = [
+    imports = [
     ./anyrun/default.nix
     ./waybar/default.nix
     ./swaync/default.nix
@@ -117,10 +130,10 @@
     ./kitty/default.nix
     ./hypr/hyprland.nix
     ./hypr/hyprpaper.nix
-#    ./hypr/hyprlock.nix
+    ./hypr/hyprlock.nix
     ./config/ghostty.nix
-#    ./config/lutris.nix
-#    ./config/steam.nix
+    ./config/lutris.nix
+    ./config/fish.nix
   ];
   programs = {
     yazi.enable = true;

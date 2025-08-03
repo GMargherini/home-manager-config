@@ -19,24 +19,25 @@
     let
       pkgs = import nixpkgs {
         system = "x86_64-linux";
-        overlays = [ nixgl.overlay ];
       };
     in
     {
-      homeConfigurations."dolphin" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ 
-          ./home/home.nix
-        ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
-        extraSpecialArgs = {
-            inherit inputs;
-          };
-      };
+	nixosConfigurations = {
+		mainframe = nixpkgs.lib.nixosSystem {
+			system = "x86_64-linux";
+			modules = [
+				./configuration.nix
+				home-manager.nixosModules.home-manager {
+					home-manager.useGlobalPkgs = true;
+					home-manager.useUserPackages = true;
+					home-manager.users.dolphin = ./home/home.nix;
+					home-manager.backupFileExtension = "bak";
+					home-manager.extraSpecialArgs = {
+					    inherit inputs;
+				  	};
+				}
+			];
+		};
+	};
     };
 }

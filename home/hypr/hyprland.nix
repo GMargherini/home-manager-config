@@ -1,6 +1,8 @@
 {
   wayland.windowManager.hyprland = {
      enable = true; 
+     xwayland.enable = true;
+     systemd.enable = true;
       settings = {
         monitor = [
           "eDP-1,preferred,0x0,auto"
@@ -155,7 +157,7 @@
 
         bind = 
           [
-            "$mainMod, Return, exec, nixGLIntel $terminal"
+            "$mainMod, Return, exec, $terminal"
             "$mainMod SHIFT, Q, killactive"
             "$mainMod SHIFT, E, exit"
             "$mainMod, F, fullscreenstate, 2 0"
