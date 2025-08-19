@@ -88,7 +88,7 @@
             outline: none; }
 
 .notification-row:focus, .notification-row:hover {
-  background: rgba(20, 20, 20, 0.8); }
+  background: rgba(68, 68, 68, 0.6); }
 
 .notification-row .notification-background {
   padding: 6px 12px; }
@@ -223,9 +223,10 @@
   opacity: 0; }
 
 .control-center {
-  background: rgb(20,20,20);
+  background: #1a1b26;
   color: white;
-  border: 2px solid SeaGreen; }
+  border-radius: 8px;
+  border: 2px solid #7aa2f7; }
   .control-center .control-center-list-placeholder {
     opacity: 0.5; }
   .control-center .control-center-list {
@@ -275,7 +276,7 @@
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: none; }
     .widget-dnd > switch:checked {
-      background: white; }
+      background: #7aa2f7; }
     .widget-dnd > switch slider {
       background: #383838;
       border-radius: 12px; }
@@ -316,7 +317,7 @@
     background: rgba(0, 0, 0, 0.2);
     color: white;
     border-radius: 8px;
-    border: 2px solid SeaGreen; }
+    border: 2px solid #7aa2f7; }
 
 .widget-menubar > box > .menu-button-bar > button {
   border: none;

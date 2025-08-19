@@ -189,31 +189,32 @@
         font-size: 16px;
         min-height: 20px;
         background-color: transparent;
-	color: white;
-      }
+        border-radius: 8px; }
 
       window#waybar {
-        background-color: rgba(128,128,128,0.1); 
-      }
+        color: #9AA5CE;
+        background-color: transparent; }
 
 #workspaces button {
         all: unset;
-	border: 2px solid SeaGreen;
-        margin: 0px 4px;
+        background: #1a1b26;
+        color: #9AA5CE;
+        margin: 2px 4px;
+        border-radius: 8px;
         padding: 4px 4px; }
-        #workspaces button:hover, #workspaces button.focused, #workspaces button.active {
+        #workspaces button:hover, #workspaces button.focused {
           all: unset;
-          color: black;
-          background: SeaGreen; 
-	  margin: 0px 4px;
-	  border: 2px solid SeaGreen;
+          color: #1a1b26;
+          background: #7aa2f7; 
+	  margin: 2px 4px;
+          border-radius: 8px;
           padding: 4px 4px;
 }
 
         #workspaces button.urgent {
           background: red;
           color: white;
-        }
+          border: 1px solid white; }
 
       tooltip {
         background-color: transparent;
@@ -221,43 +222,58 @@
 
       tooltip label,
 #tray window decoration {
-        background-color: rgba(20,20,20,0.8);
-	border: 2px solid SeaGreen;
+        background-color: #1a1b26;
         padding: 4px;
-      }
+        border: 2px solid #7aa2f7;
+        border-radius: 8px;
+        color: #9AA5CE; }
 
 #tray window label:hover {
         color: gray; }
 
 #clock {
+        background: #1a1b26;
+        border-right: 2px solid #7aa2f7;
+        border-radius: 8px 0 0 8px;
         padding: 0 6px; }
 
 #custom-weather {
+        background: #1a1b26;
+        border-radius: 0 8px 8px 0;
         padding: 0 6px; }
 
 #custom-notification {
+        background-color: #1a1b26;
         margin: 0;
         padding: 0 6px;
-      }
+        border-radius: 0 5px 5px 0; }
 
       .modules-left {
+        background-color: #1a1b26;
         margin: 2px;
         padding: 0 0px;
-      }
+        border-radius: 8px;
+        border: 2px solid #7aa2f7; }
 
       .modules-center {
+        background-color: #1a1b26;
         margin: 2px;
         padding: 0px;
-      }
+        border-radius: 8px;
+        border: 2px solid #7aa2f7; }
 
       .modules-right {
+        background-color: #1a1b26;
         margin: 2px;
         padding: 0;
-      }
+        border-radius: 8px;
+        border: 2px solid #7aa2f7; }
 
 #keyboard-state {
+        background-color: #1a1b26;
+        border-right: 2px solid #7aa2f7;
         padding: 0 6px;
-      }
+        border-radius: 8px 0 0 8px; }
         #keyboard-state.disconnected {
           color: red; }
 
@@ -270,24 +286,31 @@
 #tray,
 #network,
 #mpris {
+        border-right: 2px solid #7aa2f7;
         padding: 0 6px;
-}
+        background-color: #1a1b26;
+        border-radius: 0px; }
 
 #network:hover,
 #wireplumber:hover,
 #battery:hover,
 #custom-notification:hover {
-        background-color: SeaGreen;
-        color: black; }
+        background-color: #7aa2f7;
+        color: #1a1b26; }
 
 #custom-menu {
+        color: #9AA5CE;
+        background-color: #1a1b26;
         padding: 4px 8px;
-        background-color: SeaGreen;
-	color: black;
+        border-right: 2px solid #7aa2f7;
+	border-radius: 5px 0 0 5px;
  }
         #custom-menu:hover {
-          background-color: SeaGreen;
-          color: white; }
+          background-color: #7aa2f7;
+          color: #1a1b26; }
+
+#custom-separator {
+        color: #7aa2f7; }
 
 #battery icon {
         color: red; }

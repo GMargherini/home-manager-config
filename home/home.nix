@@ -15,64 +15,54 @@
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
+  services.kdeconnect.enable = true;
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
-    
-    cowsay
-    nvtopPackages.amd
-    htop
-    fastfetch
-    waybar
+    adwaita-icon-theme
     anyrun
-    swaynotificationcenter
-    newsboat
-    pika-backup
-    vlc
-    yazi
-    zellij
-    vscodium
+    bat
+    cowsay
+    devtoolbox
+    discord
+    fastfetch
+    fish
+    ghostty
+    htop
+    hyprcursor
     hyprland
     hyprpaper
-    kitty
-    ghostty
-    stylua
+    inkscape
+    kdePackages.kdeconnect-kde
+    libreoffice
+    lmms
     lua-language-server
+    mpv
+    newsboat
+    neovim
+    nvtopPackages.amd
+    obsidian
+    onlyoffice-desktopeditors
+    pika-backup
+    remmina
+    retroarch
     ripgrep
     ripgrep-all
-    libreoffice
-    onlyoffice-desktopeditors
-    inkscape
-    obsidian
+    ryubing
     scrcpy
-    retroarch
-    remmina
+    starship
+    stylua
+    swaynotificationcenter
     tdf
-    mpv
-    wineWowPackages.staging
-    fira
-    adwaita-icon-theme
-    devtoolbox
-    fish
-    neovim
     vimPlugins.LazyVim
-    discord
+    vlc
+    vscodium
+    waybar
+    wineWowPackages.staging
+    yazi
+    zellij
+
+    fira
     fira-code
     fira-code-symbols
     font-awesome
@@ -81,9 +71,7 @@
     noto-fonts
     noto-fonts-emoji
     proggyfonts
-    lmms
-    starship
-    bat
+
   ];
   
   fonts.fontconfig.enable = true;
@@ -146,7 +134,7 @@
     gtk.enable = true;
     # x11.enable = true;
     package = pkgs.phinger-cursors;
-    name = "phingers-cursors-light";
+    name = "phinger-cursors-light";
     size = 32;
   };
 
@@ -166,6 +154,15 @@
     font = {
       name = "Sans";
       size = 11;
+    };
+  };
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "firefox";
+      "x-scheme-handler/http" = "firefox";
+      "x-scheme-handler/https" = "firefox";
+      "inode/directory" = "dolphin";
     };
   };
 }

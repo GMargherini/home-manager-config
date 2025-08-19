@@ -1,10 +1,12 @@
 { pkgs, ... }: {
+
   programs.ghostty = {
       enable = true;
       settings = {
-          theme = "GruvboxDark";
+          theme = "Galaxy";
           command = "fish";
           font-family = "FiraCode Nerd Font Mono";
+	  background-opacity = 0.2;
         };
     };
 }

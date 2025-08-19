@@ -7,6 +7,7 @@
         monitor = [
           "eDP-1,preferred,0x0,auto"
           "DP-2,2560x1440,auto,1"
+          "HDMI-A-1,3840x2160@60.00Hz,auto,1.666667"
         ];
 
         "$mainMod" = "SUPER";
@@ -25,8 +26,8 @@
         env = [
           "XCURSOR_SIZE,32"
           "HYPRCURSOR_SIZE,32"
+	  "YPRCURSOR_THEME,phinger-cursors-light"
           "XDG_CURRENT_DESKTOP,Hyprland"
-          "XDG_MENU_PREFIX, arch-"
         ];
 
         ecosystem.enforce_permissions = 1;
@@ -44,11 +45,11 @@
           border_size = 2;
 
           # https://wiki.hypr.land/Configuring/Variables/#variable-types for info about colors
-          "col.active_border" = "rgba(d5c4a1ff)";
-          "col.inactive_border" = "rgba(595959aa)";
+          "col.active_border" = "rgb(2E8B57)";
+          "col.inactive_border" = "rgb(595959)";
 
           # Set to true enable resizing windows by clicking and dragging on borders and gaps
-          resize_on_border = false;
+          resize_on_border = true;
 
           # Please see https://wiki.hypr.land/Configuring/Tearing/ before you turn this on
           allow_tearing = false;
@@ -64,18 +65,11 @@
           active_opacity = 1.0;
           inactive_opacity = 1.0;
 
-          shadow = {
-              enabled = true;
-              range = 4;
-              render_power = 3;
-              color = "rgba(1a1a1aee)";
-          };
-
           # https://wiki.hypr.land/Configuring/Variables/#blur
           blur = {
               enabled = true;
-              size = 3;
-              passes = 1;
+              size = 6;
+              passes = 2;
 
               vibrancy = 0.1696;
           };
@@ -233,6 +227,9 @@
             "suppressevent maximize, class:.*"
             "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
           ];
+	  layerrule = [
+	    "blur, waybar"
+	  ];
       };
   };
 }

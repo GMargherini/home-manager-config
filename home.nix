@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -15,26 +15,66 @@
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
+  services.kdeconnect.enable = true;
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
+  home.packages = with pkgs; [
+    adwaita-icon-theme
+    anyrun
+    bat
+    cowsay
+    devtoolbox
+    discord
+    fastfetch
+    fish
+    ghostty
+    htop
+    hyprcursor
+    hyprland
+    hyprpaper
+    inkscape
+    kdePackages.kdeconnect-kde
+    libreoffice
+    lmms
+    lua-language-server
+    mpv
+    newsboat
+    neovim
+    nvtopPackages.amd
+    obsidian
+    onlyoffice-desktopeditors
+    pika-backup
+    remmina
+    retroarch
+    ripgrep
+    ripgrep-all
+    ryubing
+    scrcpy
+    starship
+    stylua
+    swaynotificationcenter
+    tdf
+    vimPlugins.LazyVim
+    vlc
+    vscodium
+    waybar
+    wineWowPackages.staging
+    yazi
+    zellij
 
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    fira
+    fira-code
+    fira-code-symbols
+    font-awesome
+    liberation_ttf
+    mplus-outline-fonts.githubRelease
+    noto-fonts
+    noto-fonts-emoji
+    proggyfonts
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
   ];
+  
+  fonts.fontconfig.enable = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -70,7 +110,59 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
+    imports = [
+    ./anyrun/default.nix
+    ./waybar/default.nix
+    ./swaync/default.nix
+    ./config/yt-dlp.nix
+    ./kitty/default.nix
+    ./hypr/hyprland.nix
+    ./hypr/hyprpaper.nix
+    ./hypr/hyprlock.nix
+    ./config/ghostty.nix
+    ./config/lutris.nix
+    ./config/fish.nix
+  ];
+  programs = {
+    yazi.enable = true;
+    zellij.enable = true;
+    ripgrep.enable = true;
+    mpv.enable = true;
+    home-manager.enable = true;
+  };
+  home.pointerCursor = {
+    gtk.enable = true;
+    # x11.enable = true;
+    package = pkgs.phinger-cursors;
+    name = "phinger-cursors-light";
+    size = 32;
+  };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  gtk = {
+    enable = true;
+
+    theme = {
+      package = pkgs.gruvbox-dark-gtk;
+      name = "Gruvbox-Dark";
+    };
+
+    iconTheme = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
+    };
+
+    font = {
+      name = "Sans";
+      size = 11;
+    };
+  };
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "firefox";
+      "x-scheme-handler/http" = "firefox";
+      "x-scheme-handler/https" = "firefox";
+      "inode/directory" = "dolphin";
+    };
+  };
 }

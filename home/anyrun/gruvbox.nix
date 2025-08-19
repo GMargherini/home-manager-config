@@ -28,14 +28,16 @@
             }
 
             list, entry {
-            color: white;
-            background: rgba(20,20,20,0.8);
-            border: 2px solid SeaGreen;
+            color: #d5c4a1;
+            background: #282828;
+            border: 2px solid #d5c4a1;
+            border-radius: 8px;
             }
 
             row:selected {
-            background: SeaGreen;
-            color: black;
+            background: #d5c4a1;
+            border-radius: 8px;
+            color: #282828;
           }
         '';
         extraConfigFiles."websearch.ron".text = ''

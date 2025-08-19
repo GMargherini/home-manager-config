@@ -189,31 +189,25 @@
         font-size: 16px;
         min-height: 20px;
         background-color: transparent;
-	color: white;
-      }
+        border-radius: 8px; }
 
       window#waybar {
-        background-color: rgba(128,128,128,0.1); 
-      }
+        color: #fbf1c7;
+        background-color: transparent; }
 
 #workspaces button {
-        all: unset;
-	border: 2px solid SeaGreen;
-        margin: 0px 4px;
-        padding: 4px 4px; }
-        #workspaces button:hover, #workspaces button.focused, #workspaces button.active {
-          all: unset;
-          color: black;
-          background: SeaGreen; 
-	  margin: 0px 4px;
-	  border: 2px solid SeaGreen;
-          padding: 4px 4px;
-}
-
+        background: #282828;
+        color: #fbf1c7;
+        margin: 0 2px;
+        border-radius: 8px;
+        padding: 2px 0px; }
+        #workspaces button:hover, #workspaces button.focused {
+          color: #282828;
+          background: #d5c4a1; }
         #workspaces button.urgent {
           background: red;
           color: white;
-        }
+          border: 1px solid white; }
 
       tooltip {
         background-color: transparent;
@@ -221,43 +215,58 @@
 
       tooltip label,
 #tray window decoration {
-        background-color: rgba(20,20,20,0.8);
-	border: 2px solid SeaGreen;
+        background-color: #282828;
         padding: 4px;
-      }
+        border: 2px solid #d5c4a1;
+        border-radius: 8px;
+        color: #fbf1c7; }
 
 #tray window label:hover {
         color: gray; }
 
 #clock {
+        background: #282828;
+        border-right: 2px solid #d5c4a1;
+        border-radius: 8px 0 0 8px;
         padding: 0 6px; }
 
 #custom-weather {
+        background: #282828;
+        border-radius: 0 8px 8px 0;
         padding: 0 6px; }
 
 #custom-notification {
+        background-color: #282828;
         margin: 0;
         padding: 0 6px;
-      }
+        border-radius: 0 5px 5px 0; }
 
       .modules-left {
+        background-color: #282828;
         margin: 2px;
         padding: 0 0px;
-      }
+        border-radius: 8px;
+        border: 2px solid #d5c4a1; }
 
       .modules-center {
+        background-color: #282828;
         margin: 2px;
         padding: 0px;
-      }
+        border-radius: 8px;
+        border: 2px solid #d5c4a1; }
 
       .modules-right {
+        background-color: #282828;
         margin: 2px;
         padding: 0;
-      }
+        border-radius: 8px;
+        border: 2px solid #d5c4a1; }
 
 #keyboard-state {
+        background-color: #282828;
+        border-right: 2px solid #d5c4a1;
         padding: 0 6px;
-      }
+        border-radius: 8px 0 0 8px; }
         #keyboard-state.disconnected {
           color: red; }
 
@@ -270,24 +279,31 @@
 #tray,
 #network,
 #mpris {
+        border-right: 2px solid #d5c4a1;
         padding: 0 6px;
-}
+        background-color: #282828;
+        border-radius: 0px; }
 
 #network:hover,
 #wireplumber:hover,
 #battery:hover,
 #custom-notification:hover {
-        background-color: SeaGreen;
-        color: black; }
+        background-color: #d5c4a1;
+        color: #282828; }
 
 #custom-menu {
+        color: #fbf1c7;
+        background-color: #282828;
         padding: 4px 8px;
-        background-color: SeaGreen;
-	color: black;
+        margin: 0px;
+	border-radius: 5px 0 0 5px;
  }
         #custom-menu:hover {
-          background-color: SeaGreen;
-          color: white; }
+          background-color: #d5c4a1;
+          color: #282828; }
+
+#custom-separator {
+        color: #d5c4a1; }
 
 #battery icon {
         color: red; }
@@ -316,7 +332,7 @@
         background-color: black; }
 
 #temperature.critical {
-        color: #f7768e; }
+        color: #eb4d4b; }
 
 #idle_inhibitor.activated {
         background-color: #ecf0f1;
