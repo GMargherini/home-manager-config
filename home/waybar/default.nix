@@ -189,7 +189,7 @@
         font-size: 16px;
         min-height: 20px;
         background-color: transparent;
-	color: white;
+        color: white;
       }
 
       window#waybar {
@@ -198,15 +198,15 @@
 
 #workspaces button {
         all: unset;
-	border: 2px solid SeaGreen;
+        border: 2px solid transparent;
         margin: 0px 4px;
         padding: 4px 4px; }
         #workspaces button:hover, #workspaces button.focused, #workspaces button.active {
           all: unset;
           color: black;
           background: SeaGreen; 
-	  margin: 0px 4px;
-	  border: 2px solid SeaGreen;
+          margin: 0px 4px;
+          border: 2px solid SeaGreen;
           padding: 4px 4px;
 }
 
@@ -216,14 +216,15 @@
         }
 
       tooltip {
-        background-color: transparent;
+        background: none;
         border: none; }
 
       tooltip label,
 #tray window decoration {
-        background-color: rgba(20,20,20,0.8);
-	border: 2px solid SeaGreen;
-        padding: 4px;
+        background-color: rgba(0,0,0,1);
+        border: 2px solid SeaGreen;
+        border-radius: 10px;
+        margin: 0px;
       }
 
 #tray window label:hover {
@@ -282,8 +283,8 @@
 
 #custom-menu {
         padding: 4px 8px;
-        background-color: SeaGreen;
-	color: black;
+        background-color: transparent;
+        color: white;
  }
         #custom-menu:hover {
           background-color: SeaGreen;

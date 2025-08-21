@@ -22,6 +22,7 @@
     adwaita-icon-theme
     anyrun
     bat
+    cbonsai
     cowsay
     devtoolbox
     discord
@@ -33,7 +34,9 @@
     hyprland
     hyprpaper
     inkscape
+    kdePackages.isoimagewriter
     kdePackages.kdeconnect-kde
+    kdePackages.partitionmanager
     libreoffice
     lmms
     lua-language-server
