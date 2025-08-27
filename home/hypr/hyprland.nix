@@ -229,6 +229,7 @@
           ];
           layerrule = [
             "blur, waybar"
+            "blur, anyrun"
           ];
       };
   };

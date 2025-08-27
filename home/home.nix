@@ -22,6 +22,7 @@
     adwaita-icon-theme
     anyrun
     bat
+    calc
     cbonsai
     cowsay
     devtoolbox
