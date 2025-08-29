@@ -79,6 +79,16 @@
   ];
   
   fonts.fontconfig.enable = true;
+  programs.git = {
+    enable = true;
+    userName  = "GMargherini";
+    userEmail = "giorgio.margherini@gmail.com";
+    extraConfig = {
+      credential.helper = "${
+          pkgs.git.override { withLibsecret = true; }
+        }/bin/git-credential-libsecret";
+    };
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

@@ -126,6 +126,7 @@
     nerd-fonts.fira-code
     fira-code-symbols
   ];
+  
   programs.hyprland = {
     enable = true;
     withUWSM = false;

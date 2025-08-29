@@ -183,7 +183,7 @@
         };
       };
     };
-    style = ''
+    style = '' /*css*/
       * {
         font-family: "FiraCode Nerd Font Mono", "Font Awesome 6 Free";
         font-size: 16px;
@@ -325,7 +325,7 @@
 
 #tray > .needs-attention {
         -gtk-icon-effect: highlight;
-        background-color: yelllow; }
+        background-color: yellow; }
 
 #tray * {
         padding-left: 0px;
