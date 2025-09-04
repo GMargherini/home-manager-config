@@ -6,6 +6,7 @@
       settings = {
         monitor = [
           "eDP-1,preferred,0x0,auto"
+          "DP-1,3840x2160@60.00Hz,auto,1.5"
           "DP-2,2560x1440,auto,1"
           "HDMI-A-1,3840x2160@60.00Hz,auto,1.666667"
         ];
