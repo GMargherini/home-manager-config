@@ -39,7 +39,6 @@
     kdePackages.kdeconnect-kde
     kdePackages.partitionmanager
     libreoffice
-    lmms
     lua-language-server
     mpv
     newsboat
