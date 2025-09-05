@@ -37,6 +37,7 @@
     inkscape
     kdePackages.isoimagewriter
     kdePackages.kdeconnect-kde
+    kdePackages.ktorrent
     kdePackages.partitionmanager
     libreoffice
     lua-language-server
