@@ -29,7 +29,7 @@
 
             list, entry {
             color: white;
-            background: rgb(0,0,0);
+            background: rgba(128,128,128,0.1);
             border: 2px solid SeaGreen;
             }
 

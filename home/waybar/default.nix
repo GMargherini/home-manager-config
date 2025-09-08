@@ -183,7 +183,7 @@
         };
       };
     };
-    style = '' /*css*/
+    style = ''
       * {
         font-family: "FiraCode Nerd Font Mono", "Font Awesome 6 Free";
         font-size: 16px;
@@ -193,7 +193,7 @@
       }
 
       window#waybar {
-        background-color: rgb(0,0,0); 
+        background-color: rgba(128,128,128,0.1); 
       }
 
 #workspaces button {
@@ -221,7 +221,7 @@
 
       tooltip label,
 #tray window decoration {
-        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,1);
         border: 2px solid SeaGreen;
         border-radius: 10px;
         margin: 0px;
@@ -277,8 +277,7 @@
 #network:hover,
 #wireplumber:hover,
 #battery:hover,
-#custom-notification:hover,
-#custom-menu:hover {
+#custom-notification:hover {
         background-color: SeaGreen;
         color: black; }
 
@@ -287,6 +286,10 @@
         background-color: transparent;
         color: white;
  }
+        #custom-menu:hover {
+          background-color: SeaGreen;
+          color: white; }
+
 #battery icon {
         color: red; }
 
@@ -314,7 +317,7 @@
         background-color: black; }
 
 #temperature.critical {
-        color: red; }
+        color: #f7768e; }
 
 #idle_inhibitor.activated {
         background-color: #ecf0f1;
@@ -325,7 +328,7 @@
 
 #tray > .needs-attention {
         -gtk-icon-effect: highlight;
-        background-color: yellow; }
+        background-color: #eb4d4b; }
 
 #tray * {
         padding-left: 0px;

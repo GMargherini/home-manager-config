@@ -6,7 +6,7 @@
           theme = "Galaxy";
           command = "fish";
           font-family = "FiraCode Nerd Font Mono";
-	  background-opacity = 1;
+	  background-opacity = 0.5;
         };
     };
 }
