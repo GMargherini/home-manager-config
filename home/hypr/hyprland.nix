@@ -8,7 +8,7 @@
           "eDP-1,preferred,0x0,auto"
           "DP-1,3840x2160@60.00Hz,auto,1.5"
           "DP-2,2560x1440,auto,1"
-          "HDMI-A-1,3840x2160@60.00Hz,auto,1.666667"
+          "HDMI-A-1,3840x2160@60.00Hz,auto,1.5"
         ];
 
         "$mainMod" = "SUPER";
@@ -103,9 +103,9 @@
             "layersOut, 1, 1.5, linear, fade"
             "fadeLayersIn, 1, 1.79, almostLinear"
             "fadeLayersOut, 1, 1.39, almostLinear"
-            "workspaces, 1, 1.94, almostLinear, fade"
-            "workspacesIn, 1, 1.21, almostLinear, fade"
-            "workspacesOut, 1, 1.94, almostLinear, fade"
+            "workspaces, 1, 8, default, slidefade 20%"
+            "workspacesIn, 1, 1.21, almostLinear, slidefade 20%"
+            "workspacesOut, 1, 1.94, almostLinear, slidefade 20%"
           ];
         };
 
@@ -213,6 +213,8 @@
             ", XF86AudioPause, exec, playerctl play-pause"
             ", XF86AudioPlay, exec, playerctl play-pause"
             ", XF86AudioPrev, exec, playerctl previous"
+            ", switch:off:Lid Switch, exec, hyprctl keyword monitor eDP-1,preferred,0x0,auto"
+            ", switch:on:Lid Switch, exec, hyprctl keyword monitor eDP-1, disable"
           ];
 
           bindel = [
@@ -227,6 +229,10 @@
           windowrule = [
             "suppressevent maximize, class:.*"
             "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+          ];
+          layerrule = [
+            "blur, waybar"
+            "blur, anyrun"
           ];
       };
   };
