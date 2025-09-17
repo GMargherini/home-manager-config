@@ -12,7 +12,7 @@
         ];
 
         "$mainMod" = "SUPER";
-        "$menu" = "anyrun";
+        "$menu" = "rofi -show drun";
         "$terminal" = "ghostty";
 
         exec-once = [
@@ -136,8 +136,11 @@
         };
 
         gestures = {
-          workspace_swipe = true;
+          workspace = true;
         };
+        gesture = [
+          "3, horizontal, workspace"
+        ];
 
         device = [
           {
@@ -233,6 +236,7 @@
           layerrule = [
             "blur, waybar"
             "blur, anyrun"
+            "blur, rofi"
           ];
       };
   };

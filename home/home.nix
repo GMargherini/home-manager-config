@@ -52,12 +52,14 @@
     retroarch
     ripgrep
     ripgrep-all
+    rofi
     ryubing
     scrcpy
     starship
     stylua
     swaynotificationcenter
     tdf
+    texlive.combined.scheme-full
     vimPlugins.LazyVim
     vlc
     vscodium
@@ -125,7 +127,7 @@
     # EDITOR = "emacs";
   };
     imports = [
-    ./anyrun/default.nix
+    (import ./anyrun/default.nix {pkgs = pkgs;})
     ./waybar/default.nix
     ./swaync/default.nix
     ./config/yt-dlp.nix
@@ -156,8 +158,8 @@
     enable = true;
 
     theme = {
-      package = pkgs.gruvbox-dark-gtk;
-      name = "Gruvbox-Dark";
+      package = pkgs.gnome-themes-extra;
+      name = "Adwaita";
     };
 
     iconTheme = {
@@ -170,6 +172,15 @@
       size = 11;
     };
   };
+  qt = {
+    enable = true;
+    platformTheme.name = "adwaita";
+    style = {
+      name = "adwaita-dark";
+      package = pkgs.adwaita-qt;
+    };
+  };
+
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {

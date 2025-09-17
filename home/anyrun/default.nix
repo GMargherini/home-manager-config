@@ -1,3 +1,8 @@
+{ pkgs,
+}:
+let
+  anyrun = pkgs.anyrun;
+in
 {
      programs.anyrun = {
         enable = true;
@@ -13,13 +18,11 @@
           showResultsImmediately = false;
           maxEntries = null;
 
-          plugins = [
+          plugins = with anyrun; [
             # An array of all the plugins you want, which either can be paths to the .so files, or their packages
-            "libapplications.so"
-            "libsymbols.so"
-            "libshell.so"
-            "libkidex.so"
-            "libwebsearch.so"
+            "${anyrun}/lib/libapplications.so"
+            "${anyrun}/lib/libsymbols.so"
+            "${anyrun}/lib/libshell.so"
           ];
         };
         extraCss = /*css */ ''
@@ -37,15 +40,6 @@
             background: SeaGreen;
             color: black;
           }
-        '';
-        extraConfigFiles."websearch.ron".text = ''
-          Config(
-            // for any other plugin
-            // this file will be put in ~/.config/anyrun/some-plugin.ron
-            // refer to docs of xdg.configFile for available options
-            prefix: ":?",
-            engines: [Ecosia]
-          )
         '';
       };
   }
