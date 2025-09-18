@@ -42,13 +42,13 @@ in
   # amdgpu instability with context switching between compute and graphics
   # https://bbs.archlinux.org/viewtopic.php?id=301798
   # side-effects: plymouth fails to show at boot, but does not interfere with booting
-  boot.extraModulePackages = [
-    (amdgpu-kernel-module.overrideAttrs (_: {
-      patches = [
-        # amdgpu-stability-patch
-      ];
-    }))
-  ];
+  #boot.extraModulePackages = [
+  #  (amdgpu-kernel-module.overrideAttrs (_: {
+  #    patches = [
+  #      # amdgpu-stability-patch
+  #    ];
+  #  }))
+  #];
   security.polkit.enable = true;
   networking.hostName = "mainframe"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -118,6 +118,15 @@ in
     bigclock = "en";
   };
 
+  systemd.services.lact = {
+    description = "AMDGPU Control Daemon";
+    after = ["multi-user.target"];
+    wantedBy = ["multi-user.target"];
+    serviceConfig = {
+      ExecStart = "${pkgs.lact}/bin/lact daemon";
+    };
+    enable = true;
+  };
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 

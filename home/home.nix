@@ -39,6 +39,7 @@
     kdePackages.kdeconnect-kde
     kdePackages.ktorrent
     kdePackages.partitionmanager
+    lact
     libreoffice
     lua-language-server
     mpv
