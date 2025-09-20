@@ -3,12 +3,30 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
+let
+  amdgpu-kernel-module = pkgs.callPackage ./amdgpu-kernel-module.nix {
+    # Make sure the module targets the same kernel as your system is using.
+    kernel = config.boot.kernelPackages.kernel;
+  };
+  # linuxPackages_latest 6.13 (or linuxPackages_zen 6.13)
+  amdgpu-stability-patch = pkgs.fetchpatch {
+    name = "amdgpu-stability-patch";
+    url = "https://github.com/SeryogaBrigada/linux/commit/d76bb1ebb5587f66b0f8b8099bfbb44722bc08b3.diff";
+    hash = "sha256-q/gWUPmKHFBHp7V15BW4ixfUn1kaeJhgDs0okeOGG9c=";
+  };
+  /*
+  # linuxPackages_zen 6.12
+  amdgpu-stability-patch = pkgs.fetchpatch {
+    name = "amdgpu-stability-patch-zen";
+    url = "https://github.com/zen-kernel/zen-kernel/compare/fd00d197bb0a82b25e28d26d4937f917969012aa...WhiteHusky:zen-kernel:f4c32ca166ad55d7e2bbf9adf121113500f3b42b.diff";
+    hash = "sha256-bMT5OqBCyILwspWJyZk0j0c8gbxtcsEI53cQMbhbkL8=";
+  };
+  */
+in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./configs/programs.nix
-      # ./configs/amdgpu.nix
     ];
 
   # Bootloader.
@@ -21,6 +39,16 @@
     "video=HDMI-A-1:3840x2160@60"
   ];
   boot.initrd.kernelModules = ["amdgpu"];
+   amdgpu instability with context switching between compute and graphics
+   https://bbs.archlinux.org/viewtopic.php?id=301798
+   side-effects: plymouth fails to show at boot, but does not interfere with booting
+  boot.extraModulePackages = [
+    (amdgpu-kernel-module.overrideAttrs (_: {
+      patches = [
+        amdgpu-stability-patch
+      ];
+    }))
+  ];
   security.polkit.enable = true;
   networking.hostName = "mainframe"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -107,7 +135,9 @@
     isNormalUser = true;
     description = "Dolphin";
     extraGroups = [ "networkmanager" "wheel" "input" "adbusers" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [
+      kdePackages.kate
+    ];
   };
 
   # Install firefox.
@@ -141,6 +171,30 @@
     fira-code-symbols
   ];
   
+  programs.hyprland = {
+    enable = true;
+    withUWSM = false;
+    xwayland.enable = true;
+  };
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    icu
+    harfbuzzFull
+    SDL2
+    skia
+    glfw
+    libsoundio
+  ];
+  programs.partition-manager.enable = true;
+  programs.dconf.enable = true;
+  programs.kdeconnect.enable = true;
+  programs.adb.enable = true;
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
