@@ -21,6 +21,7 @@
   home.packages = with pkgs; [
     adwaita-icon-theme
     anyrun
+    audacity
     bat
     calc
     cbonsai
