@@ -120,26 +120,27 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    file
+    gcc
+    git
+    hyprpolkitagent
+    ly
+    neovim
+    pmbootstrap
+    pwvucontrol
+    rustup
+    tree
+    unzip
+    uutils-coreutils-noprefix
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    git
-    ly
-    hyprpolkitagent
-    neovim
-    gcc
     zig
-    rustup
-    uutils-coreutils-noprefix
     zip
-    unzip
-    pmbootstrap
-    file
-    pwvucontrol
   ];
 
   fonts.packages = with pkgs; [ 
-    nerd-fonts.fira-code
     fira-code-symbols
+    nerd-fonts.fira-code
   ];
   
   xdg.portal = {

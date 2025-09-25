@@ -30,6 +30,7 @@
     discord
     fastfetch
     fish
+    fzf
     ghostty
     htop
     hyprcursor
