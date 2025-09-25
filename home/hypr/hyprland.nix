@@ -237,6 +237,8 @@
             "blur, waybar"
             "blur, anyrun"
             "blur, rofi"
+            "blur, swaync"
+            "blur, swaync-client"
           ];
       };
   };

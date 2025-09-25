@@ -137,6 +137,7 @@
     ./config/ghostty.nix
     ./config/lutris.nix
     ./config/fish.nix
+    (import ./config/rofi.nix {pkgs = pkgs;})
   ];
   programs = {
     yazi.enable = true;
