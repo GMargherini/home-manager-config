@@ -67,6 +67,7 @@
     vlc
     vscodium
     waybar
+    webcamoid
     wineWowPackages.staging
     yazi
     zellij
