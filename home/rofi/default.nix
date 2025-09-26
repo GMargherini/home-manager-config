@@ -1,8 +1,7 @@
-{pkgs, ...}:{
+{
   home.file.".config/rofi/config.rasi".text = ''
     // Write your configuration
 
-    // @theme "${pkgs.rofi}/share/rofi/themes/my_theme.rasi"
     @theme "~/.config/rofi/themes/my_theme.rasi"
     listview {
       columns:       1;
@@ -56,7 +55,7 @@
 
 window {
         transparency: "real";
-        background-color: #263238CC; /*base00 + CC (80% opacity)*/
+        background-color: #80808010; /*base00 + CC (80% opacity)*/
         border-radius: 10px;
         width: 30%;
 }
