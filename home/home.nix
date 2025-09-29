@@ -131,7 +131,6 @@
     ./waybar/default.nix
     ./swaync/default.nix
     ./config/yt-dlp.nix
-    ./kitty/default.nix
     ./hypr/hyprland.nix
     ./hypr/hyprpaper.nix
     ./hypr/hyprlock.nix
