@@ -47,7 +47,6 @@
     lua-language-server
     mpv
     newsboat
-    neovim
     nvtopPackages.amd
     obsidian
     onlyoffice-desktopeditors
@@ -58,6 +57,7 @@
     ripgrep-all
     rofi
     ryubing
+    rust-analyzer
     scrcpy
     starship
     stylua
@@ -130,6 +130,7 @@
     (import ./anyrun/default.nix {pkgs = pkgs;})
     ./waybar/default.nix
     ./swaync/default.nix
+    ./neovim/default.nix
     ./config/yt-dlp.nix
     ./hypr/hyprland.nix
     ./hypr/hyprpaper.nix

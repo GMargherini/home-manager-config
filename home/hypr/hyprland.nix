@@ -18,7 +18,6 @@
         exec-once = [
           "systemctl --user start hyprpolkitagent"
           "swaync"
-          "kidex"
           "swaync-client"
           "waybar"
           "hyprpaper"
@@ -27,7 +26,7 @@
         env = [
           "XCURSOR_SIZE,32"
           "HYPRCURSOR_SIZE,32"
-	  "YPRCURSOR_THEME,phinger-cursors-light"
+          "HYPRCURSOR_THEME,phinger-cursors-light"
           "XDG_CURRENT_DESKTOP,Hyprland"
         ];
 
