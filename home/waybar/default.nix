@@ -277,7 +277,8 @@
 #network:hover,
 #wireplumber:hover,
 #battery:hover,
-#custom-notification:hover {
+#custom-notification:hover,
+#mpris:hover {
         background-color: SeaGreen;
         color: black; }
 
