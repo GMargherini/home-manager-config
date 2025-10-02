@@ -51,6 +51,7 @@
     obsidian
     onlyoffice-desktopeditors
     pika-backup
+    presenterm
     remmina
     retroarch
     ripgrep
