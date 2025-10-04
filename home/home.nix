@@ -25,6 +25,7 @@
     bat
     calc
     cbonsai
+    cemu
     cowsay
     devtoolbox
     discord
@@ -53,7 +54,12 @@
     pika-backup
     presenterm
     remmina
-    retroarch
+    (retroarch.withCores (cores: with cores; [
+      dolphin
+      mgba
+      snes9x
+      mupen64plus
+    ]))
     ripgrep
     ripgrep-all
     rofi
