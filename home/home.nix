@@ -153,6 +153,11 @@
       name = "Adwaita";
     };
 
+    cursorTheme = {
+      package = pkgs.phinger-cursors;
+      name = "phinger-cursors-light";
+    };
+
     iconTheme = {
       package = pkgs.adwaita-icon-theme;
       name = "Adwaita";
