@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs, config, ...}:
 let
   amdgpu-kernel-module = pkgs.callPackage ./amdgpu-kernel-module.nix {
     # Make sure the module targets the same kernel as your system is using.
@@ -8,7 +8,7 @@ let
   amdgpu-stability-patch = pkgs.fetchpatch {
     name = "amdgpu-stability-patch";
     url = "https://github.com/SeryogaBrigada/linux/commit/d76bb1ebb5587f66b0f8b8099bfbb44722bc08b3.diff";
-    hash = "sha256-q/gWUPmKHFBHp7V15BW4ixfUn1kaeJhgDs0okeOGG9c=";
+    hash = "sha256-h/8Dr0oldOhXACed1JxyUU3oKcXaUSVDVF9cCtggRRw=";
   };
   /*
   # linuxPackages_zen 6.12

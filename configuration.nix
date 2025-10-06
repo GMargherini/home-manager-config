@@ -8,19 +8,21 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./configs/programs.nix
-      # ./configs/amdgpu.nix
+      # (import ./configs/amdgpu.nix {config=config; pkgs=pkgs;})
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.extraModprobeConfig = "options hid_apple fnmode=2";
   boot.kernelParams = [
     "video=DP-1:3840x2160@60"
-    "video=DP-2:3840x2160@60"
+    "video=DP-2:2560x1440@60"
     "video=HDMI-A-1:3840x2160@60"
   ];
   boot.initrd.kernelModules = ["amdgpu"];
+
   security.polkit.enable = true;
   networking.hostName = "mainframe"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -108,7 +110,6 @@
     isNormalUser = true;
     description = "Dolphin";
     extraGroups = [ "networkmanager" "wheel" "input" "adbusers" ];
-    packages = with pkgs; [];
   };
 
   # Install firefox.
