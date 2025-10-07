@@ -12,7 +12,7 @@
   };
 
   outputs =
-    attrs @ { nixpkgs, home-manager, nixpkgs-stable, ... }:
+    inputs @ { nixpkgs, home-manager, nixpkgs-stable, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -20,15 +20,14 @@
       };
       pkgs-stable = import nixpkgs-stable {
         system = system;
-        config.allowUnfree = true;
       };
     in
     {
       nixosConfigurations = {
+      	specialArgs = { 
+          inherit pkgs pkgs-stable;
+        };
 	      mainframe = nixpkgs.lib.nixosSystem {
-          specialArgs = { 
-            inherit pkgs-stable;
-          };
           system = system;
           modules = [
             ./configuration.nix
@@ -37,7 +36,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.dolphin = ./home/home.nix;
               home-manager.backupFileExtension = "bak";
-              home-manager.extraSpecialArgs = { inherit pkgs-stable; };
+              home-manager.extraSpecialArgs = { inherit inputs pkgs-stable; };
             }
           ];
 	      };

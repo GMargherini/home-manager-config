@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-stable, ... }:
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -122,24 +122,31 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    file
-    gcc
-    git
-    hyprpolkitagent
-    ly
-    neovim
-    pmbootstrap
-    pwvucontrol
-    rustup
-    tree
-    unzip
-    uutils-coreutils-noprefix
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    zig
-    zip
-  ];
+  environment.systemPackages =
+    let 
+      unstable = with pkgs; [
+      file
+      gcc
+      git
+      hyprpolkitagent
+      ly
+      neovim
+      pmbootstrap
+      pwvucontrol
+      rustup
+      tree
+      unzip
+      uutils-coreutils-noprefix
+      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      wget
+      zig
+      zip
+    ];
+    stable = with pkgs-stable; [
+      cmake
+    ];
+    in unstable ++ stable;
+
 
   fonts.packages = with pkgs; [ 
     fira-code-symbols

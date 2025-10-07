@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, pkgs-stable, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -18,78 +18,81 @@
   services.kdeconnect.enable = true;
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
-    adwaita-icon-theme
-    audacity
-    bat
-    calc
-    cbonsai
-    cemu
-    cowsay
-    devtoolbox
-    discord
-    fastfetch
-    fish
-    fzf
-    ghostty
-    htop
-    hyprcursor
-    hyprland
-    hyprpaper
-    inkscape
-    kdePackages.isoimagewriter
-    kdePackages.kate
-    kdePackages.kdeconnect-kde
-    kdePackages.ktorrent
-    kdePackages.partitionmanager
-    lact
-    libreoffice
-    lua-language-server
-    mpv
-    newsboat
-    nvtopPackages.amd
-    obsidian
-    onlyoffice-desktopeditors
-    pika-backup
-    presenterm
-    remmina
-    (retroarch.withCores (cores: with cores; [
-      dolphin
-      mgba
-      snes9x
-      mupen64plus
-    ]))
-    ripgrep
-    ripgrep-all
-    rofi
-    ryubing
-    rust-analyzer
-    scrcpy
-    starship
-    stylua
-    swaynotificationcenter
-    tdf
-    texlive.combined.scheme-full
-    vimPlugins.LazyVim
-    vlc
-    vscodium
-    waybar
-    webcamoid
-    wineWowPackages.staging
-    yazi
-    zellij
+  home.packages =
+    let
+      unstable = with pkgs; [
+        adwaita-icon-theme
+        audacity
+        bat
+        calc
+        cbonsai
+        cowsay
+        devtoolbox
+        discord
+        fastfetch
+        fish
+        fzf
+        ghostty
+        htop
+        hyprcursor
+        hyprland
+        hyprpaper
+        inkscape
+        kdePackages.isoimagewriter
+        kdePackages.kate
+        kdePackages.kdeconnect-kde
+        kdePackages.ktorrent
+        kdePackages.partitionmanager
+        lact
+        libreoffice
+        lua-language-server
+        mpv
+        newsboat
+        nvtopPackages.amd
+        obsidian
+        onlyoffice-desktopeditors
+        pika-backup
+        presenterm
+        remmina
+        # (retroarch.withCores (cores: with cores; [
+        #   dolphin
+        #   mgba
+        #   snes9x
+        #   mupen64plus
+        # ]))
+        ripgrep
+        ripgrep-all
+        rofi
+        ryubing
+        rust-analyzer
+        scrcpy
+        starship
+        stylua
+        swaynotificationcenter
+        tdf
+        texlive.combined.scheme-full
+        vimPlugins.LazyVim
+        vlc
+        vscodium
+        waybar
+        webcamoid
+        wineWowPackages.staging
+        yazi
+        zellij
 
-    fira
-    fira-code
-    fira-code-symbols
-    font-awesome
-    liberation_ttf
-    mplus-outline-fonts.githubRelease
-    noto-fonts
-    noto-fonts-emoji
-    proggyfonts
-
-  ];
+        fira
+        fira-code
+        fira-code-symbols
+        font-awesome
+        liberation_ttf
+        mplus-outline-fonts.githubRelease
+        noto-fonts
+        noto-fonts-emoji
+        proggyfonts
+      ];
+    stable = with pkgs-stable; [
+    ];
+    in stable ++ unstable;
   
   fonts.fontconfig.enable = true;
   programs.git = {
@@ -126,7 +129,7 @@
     ./hypr/hyprpaper.nix
     ./hypr/hyprlock.nix
     ./config/ghostty.nix
-    ./config/lutris.nix
+    # ./config/lutris.nix
     ./config/fish.nix
     ./rofi/default.nix
     (import ./config/themeing.nix {pkgs=pkgs;})
