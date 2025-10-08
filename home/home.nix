@@ -33,6 +33,7 @@
         fish
         fzf
         ghostty
+        heroic
         htop
         hyprcursor
         hyprland
