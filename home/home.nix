@@ -33,6 +33,9 @@
         fish
         fzf
         ghostty
+        gnomeExtensions.blur-my-shell
+        gnomeExtensions.dash-to-dock
+        gnomeExtensions.just-perfection
         heroic
         htop
         hyprcursor
@@ -40,7 +43,6 @@
         hyprpaper
         inkscape
         kdePackages.isoimagewriter
-        kdePackages.kate
         kdePackages.kdeconnect-kde
         kdePackages.ktorrent
         kdePackages.partitionmanager
@@ -148,7 +150,7 @@
       "text/html" = "firefox";
       "x-scheme-handler/http" = "firefox";
       "x-scheme-handler/https" = "firefox";
-      "inode/directory" = "dolphin";
+      "inode/directory" = "nautilus";
     };
   };
 }
