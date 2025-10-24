@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-stable, inputs, ... }:
+{ pkgs, pkgs-stable, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -100,8 +100,8 @@
   fonts.fontconfig.enable = true;
   programs.git = {
     enable = true;
-    userName  = "GMargherini";
-    userEmail = "giorgio.margherini@gmail.com";
+    settings.user.name  = "GMargherini";
+    settings.user.email = "giorgio.margherini@gmail.com";
   };
 
   # Home Manager can also manage your environment variables through
@@ -135,6 +135,7 @@
     # ./config/lutris.nix
     ./config/fish.nix
     ./rofi/default.nix
+    ./helix/default.nix
     (import ./config/themeing.nix {pkgs=pkgs;})
   ];
   programs = {
@@ -151,6 +152,7 @@
       "x-scheme-handler/http" = "firefox";
       "x-scheme-handler/https" = "firefox";
       "inode/directory" = "nautilus";
+      "application/pdf" = "evince";
     };
   };
 }
