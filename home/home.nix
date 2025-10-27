@@ -54,6 +54,7 @@
         nvtopPackages.amd
         obsidian
         onlyoffice-desktopeditors
+        perf
         pika-backup
         presenterm
         remmina

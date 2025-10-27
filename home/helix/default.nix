@@ -8,6 +8,11 @@
         lsp.display-messages = true;
         lsp.display-inlay-hints = true;
         indent-guides.render = true;
+        cursor-shape = {
+          insert = "bar";
+          normal = "block";
+          select = "underline";
+        };
       };
     };
     languages = {
