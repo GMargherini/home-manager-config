@@ -16,15 +16,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.extraModprobeConfig = "options hid_apple fnmode=2";
-  boot.kernelParams = [
-    "video=DP-1:3840x2160@60"
-    "video=DP-2:2560x1440@60"
-    "video=HDMI-A-1:3840x2160@60"
-  ];
-  boot.initrd.kernelModules = ["amdgpu"];
 
   security.polkit.enable = true;
-  networking.hostName = "mainframe"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -58,21 +52,21 @@
   services.xserver.enable = false;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = false;
-  services.desktopManager.gnome.enable = true;
-  services.gnome.games.enable = false;
-  services.desktopManager.cosmic.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.open = true;  # see the note above
+
+  hardware.nvidia.prime = {
+    intelBusId = "0:2:0";
+    nvidiaBusId = "1:0:0";
+  }
   
-  services.displayManager.ly = {
-    enable = true;
-    settings = {
-      animation = "matrix";
-      bigclock = "en";
-    };
-  };
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us";
+    layout = "it";
     variant = "";
   };
 
@@ -95,16 +89,6 @@
     #media-session.enable = true;
   };
   
-
-  systemd.services.lact = {
-    description = "AMDGPU Control Daemon";
-    after = ["multi-user.target"];
-    wantedBy = ["multi-user.target"];
-    serviceConfig = {
-      ExecStart = "${pkgs.lact}/bin/lact daemon";
-    };
-    enable = true;
-  };
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 

@@ -28,14 +28,10 @@
         cbonsai
         cowsay
         devtoolbox
-        discord
         fastfetch
         fish
         fzf
         ghostty
-        gnomeExtensions.blur-my-shell
-        gnomeExtensions.dash-to-dock
-        gnomeExtensions.just-perfection
         heroic
         htop
         hyprcursor
@@ -46,7 +42,6 @@
         kdePackages.kdeconnect-kde
         kdePackages.ktorrent
         kdePackages.partitionmanager
-        lact
         libreoffice
         lua-language-server
         mpv
@@ -125,13 +120,8 @@
     # EDITOR = "emacs";
   };
     imports = [
-    ./waybar/default.nix
-    ./swaync/default.nix
     ./neovim/default.nix
     ./config/yt-dlp.nix
-    ./hypr/hyprland.nix
-    ./hypr/hyprpaper.nix
-    ./hypr/hyprlock.nix
     ./config/ghostty.nix
     # ./config/lutris.nix
     ./config/fish.nix
@@ -152,8 +142,8 @@
       "text/html" = "firefox";
       "x-scheme-handler/http" = "firefox";
       "x-scheme-handler/https" = "firefox";
-      "inode/directory" = "nautilus";
-      "application/pdf" = "evince";
+      "inode/directory" = "dolphin";
+      "application/pdf" = "okular";
     };
   };
 }
