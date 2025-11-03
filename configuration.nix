@@ -18,7 +18,7 @@
   boot.extraModprobeConfig = "options hid_apple fnmode=2";
 
   security.polkit.enable = true;
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "vivobook"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -62,7 +62,7 @@
   hardware.nvidia.prime = {
     intelBusId = "0:2:0";
     nvidiaBusId = "1:0:0";
-  }
+  };
   
   # Configure keymap in X11
   services.xserver.xkb = {
