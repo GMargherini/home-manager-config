@@ -110,6 +110,7 @@
   environment.systemPackages =
     let 
       unstable = with pkgs; [
+      exfat
       file
       gcc
       git

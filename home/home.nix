@@ -44,6 +44,7 @@
         kdePackages.partitionmanager
         libreoffice
         lua-language-server
+	makemkv
         mpv
         newsboat
         nvtopPackages.amd
