@@ -3,10 +3,10 @@
   programs.ghostty = {
       enable = true;
       settings = {
-          theme = "Galaxy";
+          theme = "Dracula";
           command = "fish";
           font-family = "FiraCode Nerd Font Mono";
-	  background-opacity = 0.5;
+	  background-opacity = 1;
         };
     };
 }

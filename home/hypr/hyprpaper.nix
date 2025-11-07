@@ -2,12 +2,12 @@
   services.hyprpaper = {
       enable = true;
       settings = {
-        preload = "/home/dolphin/Pictures/Wallpapers/4K/hologram.jpg";
+        preload = "/home/dolphin/Pictures/Wallpapers/4K/nixos.png";
         wallpaper = [
-          "eDP-1,/home/dolphin/Pictures/Wallpapers/4K/hologram.jpg"
-          "DP-1, /home/dolphin/Pictures/Wallpapers/4K/hologram.jpg"
-          "DP-2, /home/dolphin/Pictures/Wallpapers/4K/hologram.jpg"
-          "HDMI-A-1, /home/dolphin/Pictures/Wallpapers/4K/hologram.jpg"
+          "eDP-1,/home/dolphin/Pictures/Wallpapers/4K/nixos.png"
+          "DP-1, /home/dolphin/Pictures/Wallpapers/4K/nixos.png"
+          "DP-2, /home/dolphin/Pictures/Wallpapers/4K/nixos.png"
+          "HDMI-A-1, /home/dolphin/Pictures/Wallpapers/4K/nixos.png"
         ];
       };
     };
