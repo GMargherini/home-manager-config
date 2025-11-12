@@ -16,7 +16,7 @@
           density = "compact";
           position = "top";
           showCapsule = false;
-          floating = true;
+          floating = false;
           widgets = {
             left = [
               {
@@ -72,6 +72,7 @@
         general = {
           avatarImage = "/home/dolphin/.face";
           radiusRatio = 0.0;
+          enableShadows = false;
         };
         location = {
           monthBeforeDay = false;

@@ -65,11 +65,15 @@
 
           # https://wiki.hypr.land/Configuring/Variables/#blur
           blur = {
-              enabled = true;
+              enabled = false;
               size = 6;
               passes = 2;
 
               vibrancy = 0.1696;
+          };
+
+          shadow = {
+            enabled = false;
           };
         };
 
