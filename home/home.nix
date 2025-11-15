@@ -32,6 +32,7 @@
         fish
         fzf
         ghostty
+	handbrake
         heroic
         htop
         hyprcursor
