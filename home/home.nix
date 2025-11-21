@@ -29,7 +29,6 @@
         cowsay
         devtoolbox
         fastfetch
-        fish
         fzf
         ghostty
 	handbrake
@@ -48,6 +47,7 @@
 	makemkv
         mpv
         newsboat
+        nushell
         nvtopPackages.amd
         obsidian
         onlyoffice-desktopeditors
