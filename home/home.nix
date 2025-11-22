@@ -30,7 +30,6 @@
         devtoolbox
         discord
         fastfetch
-        fish
         fzf
         ghostty
         gnomeExtensions.blur-my-shell
@@ -51,6 +50,7 @@
         lua-language-server
         mpv
         newsboat
+        nushell
         nvtopPackages.amd
         obsidian
         onlyoffice-desktopeditors

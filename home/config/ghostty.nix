@@ -4,7 +4,7 @@
       enable = true;
       settings = {
           theme = "Dracula";
-          command = "fish";
+          command = "nu";
           font-family = "FiraCode Nerd Font Mono";
 	  background-opacity = 1;
         };
